@@ -28,9 +28,11 @@ class BooksController < ApplicationController
     end
     
     def edit
+         @categories = Category.all.map{ |c| [c.name, c.id] }
     end
     
     def update
+          @book = current_user.books.build(book_params)
         if @book.update(book_params)
             redirect_to book_path(@book)
         else
