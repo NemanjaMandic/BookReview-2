@@ -31,7 +31,7 @@
         <ul class="dropdown-menu" role="menu">
         
          <% Category.all.each do |cat| %>
-           <li>
+           <li class="<%= 'active' if params[:category] == cat.name %>">
             <%= link_to cat.name, books_path(category: cat.name), class: "link" %>
            </li>
          <% end %>
