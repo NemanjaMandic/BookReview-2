@@ -4,6 +4,10 @@
    <h1>There aren no books currently in this category</h1>
    <% else %>
     <% @books.each do |book| %>
-       <h2><%= link_to book.title, book_path(book) %></h2>
+       <a href="/books/<%= book.id %>">
+           <%= image_tag book.book_img.url(:book_index) %>
+       </a>
  <% end %>
  <% end %>
+
+****** video 3 11:54 minut **************
