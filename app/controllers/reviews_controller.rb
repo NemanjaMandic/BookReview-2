@@ -21,8 +21,12 @@ class ReviewsController < ApplicationController
         end
     end
     
-    def edit 
-      
+    def edit
+    end
+    
+    def destroy
+        @review.destroy 
+        redirect_to book_path(@book)
     end
     
     def update
